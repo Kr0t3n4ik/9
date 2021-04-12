@@ -1,0 +1,13 @@
+matrix = [
+    [3, -2, 6, 4],
+    [8, 1, 12, 2],
+    [5, 4, -8, 0]]
+
+for row in range(len(matrix)):
+    for i in range(len(matrix[row]) - 1):
+        for j in range(len(matrix[row]) - i - 1):
+            if matrix[row][j] > matrix[row][j + 1]:
+                matrix[row][j], matrix[row][j + 1] = matrix[row][j + 1], matrix[row][j]
+
+    print(*matrix[row])
+    
