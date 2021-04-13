@@ -1,0 +1,22 @@
+import random
+
+matrix_size = int(input('Enter the size of the matrix:'))
+
+matrix = [[random.randrange(1, 100) for x in range(matrix_size)] for y in range(matrix_size)]
+
+
+def sort_martix(matrix):
+    for matrix_item in range(len(matrix)):
+        for row_matrix_index in range(len(matrix[matrix_item]) - 1):
+            for j in range(len(matrix[matrix_item]) - row_matrix_index - 1):
+                if matrix_item % 2 == 0:
+                    if matrix[matrix_item][j] < matrix[matrix_item][j + 1]:
+                        matrix[matrix_item][j], matrix[matrix_item][j + 1] = matrix[matrix_item][j + 1], \
+                                                                             matrix[matrix_item][j]
+                else:
+                    if matrix[matrix_item][j] > matrix[matrix_item][j + 1]:
+                        matrix[matrix_item][j], matrix[matrix_item][j + 1] = matrix[matrix_item][j + 1], \
+                                                                             matrix[matrix_item][j]
+
+    return matrix
+    
