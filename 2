@@ -1,0 +1,19 @@
+items = [
+    ['Alex', 10, 130, 35],
+    ['Maria', 11, 135, 39],
+    ['Olga', 9, 140, 35],
+    ['Dmytro', 10, 128, 30]
+]
+
+sort_key = int(input('Select the sorting method (specify the key):'))
+
+for item_index in range(len(items) - 1):
+    for j in range(len(items) - item_index - 1):
+        if items[j][sort_key] > items[j + 1][sort_key]:
+            items[j], items[j + 1] = items[j + 1], items[j]
+
+for item in items:
+    for item_item in item:
+        print(item_item, end=' | ')
+    print('\n')
+    
